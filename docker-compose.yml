@@ -1,0 +1,59 @@
+version: '3.8'
+
+services:
+  php:
+    build:
+      context: ./docker/php
+    container_name: fuelphp-php
+    volumes:
+      - ./app:/var/www/html
+    networks:
+      - fuelphp
+    environment:
+      - TZ=Asia/Ho_Chi_Minh
+
+  nginx:
+    image: nginx:latest
+    container_name: fuelphp-nginx
+    volumes:
+      - ./app:/var/www/html
+      - ./docker/nginx/default.conf:/etc/nginx/conf.d/default.conf
+    ports:
+      - "8080:80"
+    depends_on:
+      - php
+    networks:
+      - fuelphp
+
+  db:
+    image: mysql:8.0
+    container_name: fuelphp-db
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: fuelphp
+    ports:
+      - "3306:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+    networks:
+      - fuelphp
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: fuelphp-phpmyadmin
+    environment:
+      - PMA_HOST=db
+      - MYSQL_ROOT_PASSWORD=root
+    ports:
+      - "8081:80"
+    networks:
+      - fuelphp
+    depends_on:
+      - db
+  
+networks:
+  fuelphp:
+    driver: bridge
+volumes:
+  db_data:
