@@ -56,7 +56,7 @@ return array(
 
 	// 'index_file' => false,
 
-	// 'profiling' => false,
+	'profiling' => true,
 
 	/**
 	 * -------------------------------------------------------------------------
@@ -198,9 +198,9 @@ return array(
 	 *
 	 */
 
-	// 'log_threshold'   => Fuel::L_WARNING,
-	// 'log_path'        => APPPATH.'logs/',
-	// 'log_date_format' => 'Y-m-d H:i:s',
+	'log_threshold'   => Fuel::L_WARNING,
+	'log_path'        => APPPATH.'logs/',
+	'log_date_format' => 'Y-m-d H:i:s',
 
 	/**
 	 * -------------------------------------------------------------------------
@@ -449,7 +449,7 @@ return array(
 	 * -------------------------------------------------------------------------
 	 */
 
-	// 'always_load' => array(
+	'always_load' => array(
 		/**
 		 * ---------------------------------------------------------------------
 		 *  These packages are loaded on Fuel's startup.
@@ -467,9 +467,10 @@ return array(
 		 * ---------------------------------------------------------------------
 		 */
 
-		// 'packages' => array(
-		// 	// 'orm',
-		// ),
+		'packages' => array(
+			'orm',
+			'auth'
+		),
 
 		/**
 		 * ---------------------------------------------------------------------
@@ -531,5 +532,5 @@ return array(
 		 */
 
 		// 'language' => array(),
-	// ),
+	),
 );

@@ -29,6 +29,10 @@ return array(
 
 	'_404_' => 'welcome/404',
 
+	'login' => 'auth/login',
+    'logout' => 'auth/logout',
+
+	'admin/dashboard' => 'admin/dashboard/index',
 	/**
 	 * -------------------------------------------------------------------------
 	 *  Example for Presenter
