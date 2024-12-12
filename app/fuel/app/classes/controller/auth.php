@@ -83,7 +83,7 @@ class Controller_Auth extends Controller_Template
 					if($user['group'] == 1) {
 						return Response::redirect('/admin/dashboard');
 					}
-					return Response::redirect('/');
+					return Response::redirect('/client/home');
 				} else {
 					Session::set_flash('error', 'Invalid username or password.');
 				}
@@ -94,5 +94,14 @@ class Controller_Auth extends Controller_Template
 
 		return View::forge('auth/login');
 	}
+
+	public function action_logout()
+    {
+        // Hủy tất cả các session
+        Session::destroy();
+
+        // Chuyển hướng về trang đăng nhập
+        return Response::redirect('/login');
+    }
 
 }

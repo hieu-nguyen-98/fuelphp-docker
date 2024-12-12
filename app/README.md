@@ -36,3 +36,24 @@ You can not apply for membership. Start by sending in pull-requests, work on out
 * Jelmer Schreuder - Developer ([http://jelmerschreuder.nl/](http://jelmerschreuder.nl/))
 * Phil Sturgeon - Developer ([http://philsturgeon.co.uk](http://philsturgeon.co.uk))
 * Dan Horrigan - Founder, Developer ([http://dhorrigan.com](http://dhorrigan.com))
+
+## Version 
+PHP 8.1
+
+## Step 1
+docker-compose up -d
+
+## Step 2
+composer install
+
+## Step 3
+php oil refine migrate
+
+## Step 4
+php oid refine userseeder:run
+
+Web : http://localhost:8080/
+
+PhpAdmin : http://localhost:8081
+user :root
+password : root

@@ -11,7 +11,9 @@
 <body>
     <!-- User Header -->
     <header>
-        <h1>Welcome, <?php echo $user_name; ?></h1>
+        <h1>Welcome, <?php echo Session::get('user_name'); ?>!</h1>
+        <p>Email: <?php echo Session::get('user_email'); ?></p>
+        <p>Group: <?php echo Session::get('user_group'); ?></p>
         <nav>
             <ul>
                 <li><a href="/user/profile">Profile</a></li>
