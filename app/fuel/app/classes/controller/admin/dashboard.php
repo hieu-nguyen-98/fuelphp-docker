@@ -25,6 +25,7 @@ class Controller_Admin_Dashboard extends Controller_Template
 	{
         $today = date('Y-m-d'); 
         $five_days_ago = date('Y-m-d', strtotime('-5 days'));
+        $first_day_of_month = date('Y-m-01');
         $start_date = Input::get('start_date', $today);
         $end_date = Input::get('end_date', $today); 
         if ($start_date == $end_date) {
@@ -104,7 +105,8 @@ class Controller_Admin_Dashboard extends Controller_Template
             'end_date'               => $end_date, // Ngày kết thúc tìm kiếm
             'teams'                  => Model_Team::find('all'), // Danh sách teams
             'today'                  => $today, // Ngày hôm nay
-            'five_days_ago'          => $five_days_ago
+            'five_days_ago'          => $five_days_ago,
+            'first_day_of_month'     => $first_day_of_month,
         ];
 
 		$data["subnav"] = array('index'=> 'active' );

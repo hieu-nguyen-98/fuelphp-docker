@@ -8,10 +8,10 @@
 	</select>
 
 		<label for="start_date">Start Date:</label>
-        <input type="date" name="start_date" id="start_date" value="<?= htmlspecialchars($start_date) ?>" min=<?php echo $five_days_ago ?> max="<?php echo $today; ?>">
+        <input type="date" name="start_date" id="start_date" value="<?= htmlspecialchars($start_date) ?>" min=<?php echo $first_day_of_month ?> max="<?php echo $today; ?>">
 
         <label for="end_date">End Date:</label>
-        <input type="date" name="end_date" id="end_date" value="<?= htmlspecialchars($end_date) ?>" max="<?php echo $today; ?>" min="<?php echo $today ?>">
+        <input type="date" name="end_date" id="end_date" value="<?= htmlspecialchars($end_date) ?>" max="<?php echo $today; ?>" min="<?php echo $first_day_of_month ?>">
 	<button type="submit">search</button>
 </form>
 <table>
