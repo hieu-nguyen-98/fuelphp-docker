@@ -19,6 +19,7 @@ return array(
 	 */
 
 	'_root_' => 'welcome/index',
+	'register' => 'welcome/register',
 
 	/**
 	 * -------------------------------------------------------------------------

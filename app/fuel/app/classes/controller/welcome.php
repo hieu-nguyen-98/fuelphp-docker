@@ -31,6 +31,12 @@ class Controller_Welcome extends Controller
 	{
 		return Response::forge(View::forge('welcome/index'));
 	}
+    
+
+	public function action_register()
+	{
+		return Response::forge(View::forge('welcome/register'));
+	}
 
 	/**
 	 * A typical "Hello, Bob!" type example.  This uses a Presenter to

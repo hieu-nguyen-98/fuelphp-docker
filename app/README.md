@@ -36,7 +36,6 @@ You can not apply for membership. Start by sending in pull-requests, work on out
 * Jelmer Schreuder - Developer ([http://jelmerschreuder.nl/](http://jelmerschreuder.nl/))
 * Phil Sturgeon - Developer ([http://philsturgeon.co.uk](http://philsturgeon.co.uk))
 * Dan Horrigan - Founder, Developer ([http://dhorrigan.com](http://dhorrigan.com))
-
 ## Version 
 PHP 8.1
 
